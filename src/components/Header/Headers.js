@@ -19,6 +19,7 @@ function Headers() {
       const history = useHistory();
     return (
         <div className="header">
+          
         <Link to="/">
           <img className="header__logo" src={logo} />
         </Link>
@@ -31,13 +32,17 @@ function Headers() {
           onChange={onChangeSearch}
         value={context.search}
         />
+
          <SearchTwoToneIcon className="header__searchIcon" />
+
         </div>
         <div className="header__nav">
         <div className="header__option_one">
+
             <strong>Hello, User</strong>
         </div>
         <div className="header__option_three">
+
           <Link exact to="/cart">
           <strong>Cart</strong>
           </Link>

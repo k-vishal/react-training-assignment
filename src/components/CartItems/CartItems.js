@@ -41,11 +41,13 @@ function CartItems() {
           return (
             <div className="cart__contains__map" key={index}>
               <h3>{data.title}</h3>
+
               <p className="product__desc">{data.description}</p>
               <strong>{data.price} ₹</strong>
               <strong>Quantity : {data.qty} </strong>
               <img src={data.image} alt="Image"></img>
               <br />
+
               <button
                 onClick={() => {
                   removeFromCart(data);
@@ -60,8 +62,11 @@ function CartItems() {
       {context.cartProductState.length !== 0 && (
         <div>
           <h3>Subtotal ({context.cartProductState.length} items) </h3>
+
           <strong>Price : {subTotal.toFixed(2)} ₹</strong>
           <br />
+          <br />
+
           <button className="subtotal_button" onClick={orderPlace}>PLACE ORDER</button>
         </div>
       )}

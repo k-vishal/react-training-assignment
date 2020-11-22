@@ -50,17 +50,14 @@ function ProductDetails() {
         <button
           onClick={() => {
             setQty(qty + 1);
-          }}
-          className="product__qty"
-        >
+          }}   className="product__qty"  >
           +
         </button>
+
         <button
           onClick={() => {
             decrementQty();
-          }}
-          className="product__qty"
-        >
+          }}   className="product__qty" >
           -
         </button>
         <button
@@ -70,7 +67,7 @@ function ProductDetails() {
               value: { productDetails },
             });
             history.push(`/`);
-            alert("added to cart!")
+            alert("Added to Cart!")
           }}
           className="product__cart"
         >

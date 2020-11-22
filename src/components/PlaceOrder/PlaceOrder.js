@@ -10,6 +10,7 @@ function PlaceOrder() {
 
   const context = useContext(CartContext);
   const history = useHistory();
+
   const [values, setValues] = useState({
     name: "",
     email: context.cartUserState ? context.cartUserState.email : "",
@@ -28,10 +29,12 @@ function PlaceOrder() {
   };
   
   const handleSubmit = e => {
+
     e.preventDefault();
     let errArray= validate(values);
     setErrors(errArray);
    setIsSubmitting(true);
+
    if(Object.keys(errArray).length === 0) {
       alert("Order placed Successfully!");
     context.dispatchState({
@@ -41,6 +44,7 @@ function PlaceOrder() {
   };
 
   const validate = (values) => {
+
     let errors = {};
     if (!values.name) {
       errors.name = "Name is Required!";
@@ -90,7 +94,9 @@ function PlaceOrder() {
             value={values.name}
             onChange={handleChange}
           />
+
           {errors.name && <span>{errors.name}</span>}
+
           <input
             type="text"
             placeholder="Email"
@@ -119,7 +125,9 @@ function PlaceOrder() {
             value={values.creditNo}
             onChange={handleChange}
           />
+
          {errors.creditNo && <span>{errors.creditNo}</span>}
+         
           <button type="submit">BUY NOW</button>
         </div>
       </div>
